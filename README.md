@@ -15,3 +15,4 @@ A simple Java/Scala payment gateway SPI
 | [PayPal](https://www.paypal.com/)                  | [libpay-paypal](https://github.com/wix/libpay-paypal)                 |
 | [Pelecard](http://www.pelecard.com/)               | [libpay-pelecard](https://github.com/wix/libpay-pelecard)             |
 | [Tranzila](http://www.tranzila.co.il/)             | [libpay-tranzila](https://github.com/wix/libpay-tranzila)             |
+| [Worldpay](http://www.worldpay.com/)               | [libpay-worldpay](https://github.com/wix/libpay-worldpay)             |
