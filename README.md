@@ -7,6 +7,7 @@ A simple Java/Scala payment gateway SPI
 | [Braintree](https://www.braintreepayments.com/)    | [libpay-braintree](https://github.com/wix/libpay-braintree)           |
 | [CreditGuard](http://www.creditguard.co.il/)       | [libpay-creditguard](https://github.com/wix/libpay-creditguard)       |
 | [Dengi Online](https://dengionline.com/)           | [libpay-dengionline](https://github.com/wix/libpay-dengionline)       |
+| [eWAY](https://eway.io/)                           | [libpay-eway](https://github.com/wix/libpay-eway)                     |
 | [Fat Zebra](https://www.fatzebra.com.au/)          | [libpay-fatzebra](https://github.com/wix/libpay-fatzebra)             |
 | [MercuryPay](https://www.mercurypay.com/)          | [libpay-mercurypay](https://github.com/wix/libpay-mercurypay)         |
 | [Paguelo Facil](http://www.paguelofacil.com/)      | [libpay-paguelofacil](https://github.com/wix/libpay-paguelofacil)     |
