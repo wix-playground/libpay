@@ -39,6 +39,7 @@
         <groupId>com.wix</groupId>
         <artifactId>wix-oss-parent</artifactId>
         <version>1.2.0</version>
+        <relativePath />
     </parent>
 
 
