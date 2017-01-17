@@ -4,7 +4,7 @@
 
     <groupId>com.wix.pay</groupId>
     <artifactId>libpay-all</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.2.0</version>
     <packaging>pom</packaging>
     <name>Wix Payments SPI Aggregator</name>
     <description>Wix Payments SPI modules pom</description>
@@ -12,7 +12,7 @@
     <parent>
         <groupId>com.wix.pay</groupId>
         <artifactId>libpay-parent</artifactId>
-        <version>1.2.0-SNAPSHOT</version>
+        <version>1.2.0</version>
 		<relativePath>libpay-parent</relativePath>
     </parent>
 
@@ -20,7 +20,7 @@
         <url>https://github.com/wix/libpay</url>
         <connection>scm:git:git://github.com/wix/libpay.git</connection>
         <developerConnection>scm:git:git@github.com:wix/libpay.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>1.2.0</tag>
     </scm>
 
     <modules>
