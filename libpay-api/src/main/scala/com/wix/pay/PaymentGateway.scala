@@ -44,6 +44,7 @@ trait PaymentGateway {
     * @return
     *         The gateway generated transaction ID, a unique identifier of the transaction.
     */
+  @deprecated("Please use sale2 instead", "2/2/2017")
   def sale(merchantKey: String,
            creditCard: CreditCard,
            currencyAmount: CurrencyAmount,
@@ -75,7 +76,6 @@ trait PaymentGateway {
     * @return
     *         The gateway generated transaction ID, a unique identifier of the transaction.
     */
-  @deprecated("Please use sale2 instead", "2/2/2017")
   def sale2(merchantKey: String,
            creditCard: CreditCard,
            payment: Payment,
