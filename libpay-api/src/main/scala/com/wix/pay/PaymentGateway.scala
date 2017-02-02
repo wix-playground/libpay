@@ -44,7 +44,7 @@ trait PaymentGateway {
     * @return
     *         The gateway generated transaction ID, a unique identifier of the transaction.
     */
-  def sale2(merchantKey: String,
+  def sale(merchantKey: String,
            creditCard: CreditCard,
            payment: Payment,
            customer: Option[Customer] = None,
