@@ -33,38 +33,6 @@ trait PaymentGateway {
     *                    This parameter is a string holding a merchant credentials, for the specific gateway.
     * @param creditCard
     *                   The credit card to be charged.
-    * @param currencyAmount
-    *                       The amount and currency of the transaction.
-    * @param customer
-    *                 Some gateways require verbose details about the paying customer. For these gateways, this
-    *                 optional parameter must be provided.
-    * @param deal
-    *             Some gateways require verbose details about the deal. For these gateways, this optional parameter
-    *             must be provided.
-    * @return
-    *         The gateway generated transaction ID, a unique identifier of the transaction.
-    */
-  @deprecated("Please use sale2 instead", "2/2/2017")
-  def sale(merchantKey: String,
-           creditCard: CreditCard,
-           currencyAmount: CurrencyAmount,
-           customer: Option[Customer] = None,
-           deal: Option[Deal] = None): Try[String] = {
-    throw new UnsupportedOperationException()
-  }
-
-
-  /** A ''Sale'' combines the ''Authorization'' and ''Capture'' process in one transaction.
-    * Credit card associations require a merchant to submit a ''Sale'' transaction request only when the merchant
-    * fulfills an order immediately. Transactions that include physical shipments are not fulfilled until shipment,
-    * usually sometime after the customer "purchases" the product, and so would not qualify as a sales transaction.
-    *
-    * @param merchantKey
-    *                    Specific gateway may verify merchants in various means. Some, by login ID and transaction
-    *                    key; some, by username/password; others, by private and public key, etc.
-    *                    This parameter is a string holding a merchant credentials, for the specific gateway.
-    * @param creditCard
-    *                   The credit card to be charged.
     * @param payment
     *                       The amount, currency and installments number of the transaction.
     * @param customer
@@ -80,9 +48,7 @@ trait PaymentGateway {
            creditCard: CreditCard,
            payment: Payment,
            customer: Option[Customer] = None,
-           deal: Option[Deal] = None): Try[String] = {
-    throw new UnsupportedOperationException()
-  }
+           deal: Option[Deal] = None): Try[String]
 
   /** The ''Authorize'' operation.
     *
