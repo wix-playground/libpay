@@ -7,7 +7,7 @@
 package com.wix.pay
 
 import com.wix.pay.creditcard.CreditCard
-import com.wix.pay.model.{CurrencyAmount, Customer, Deal}
+import com.wix.pay.model.{Customer, Deal, Payment}
 
 import scala.util.Try
 
@@ -33,8 +33,8 @@ trait PaymentGateway {
     *                    This parameter is a string holding a merchant credentials, for the specific gateway.
     * @param creditCard
     *                   The credit card to be charged.
-    * @param currencyAmount
-    *                       The amount and currency of the transaction.
+    * @param payment
+    *                       The amount, currency and number of installments of the transaction.
     * @param customer
     *                 Some gateways require verbose details about the paying customer. For these gateways, this
     *                 optional parameter must be provided.
@@ -46,7 +46,7 @@ trait PaymentGateway {
     */
   def sale(merchantKey: String,
            creditCard: CreditCard,
-           currencyAmount: CurrencyAmount,
+           payment: Payment,
            customer: Option[Customer] = None,
            deal: Option[Deal] = None): Try[String]
 
@@ -78,8 +78,8 @@ trait PaymentGateway {
     *                    This parameter is a string holding a merchant credentials, for the specific gateway.
     * @param creditCard
     *                   The credit card to be charged.
-    * @param currencyAmount
-    *                       The amount and currency of the transaction.
+    * @param payment
+    *                       The amount, currency and number of installments of the transaction.
     * @param customer
     *                 Some gateways require verbose details about the paying customer. For these gateways, this
     *                 optional parameter must be provided.
@@ -91,7 +91,7 @@ trait PaymentGateway {
     */
   def authorize(merchantKey: String,
                 creditCard: com.wix.pay.creditcard.CreditCard,
-                currencyAmount: CurrencyAmount,
+                payment: Payment,
                 customer: Option[Customer] = None,
                 deal: Option[Deal] = None): Try[String]
 
