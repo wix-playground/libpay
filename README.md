@@ -4,6 +4,7 @@ A simple Java/Scala payment gateway SPI
 ## Supported payment gateways
 | Payment Gateway                                    | Project                                                                         |
 | -------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [2checkout](https://www.2checkout.com/)            | [libpay-2checkout](https://github.com/wix/libpay-2checkout)                     |
 | [Authorize.Net](http://www.authorize.net/)         | [libpay-authorizenet](https://github.com/wix/libpay-authorizenet)               |
 | [Braintree](https://www.braintreepayments.com/)    | [libpay-braintree](https://github.com/wix/libpay-braintree)                     |
 | [CreditGuard](http://www.creditguard.co.il/)       | [libpay-creditguard](https://github.com/wix/libpay-creditguard)                 |
