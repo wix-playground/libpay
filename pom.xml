@@ -26,5 +26,6 @@
     <modules>
         <module>libpay-parent</module>
         <module>libpay-api</module>
+        <module>libpay-testkit</module>
     </modules>
 </project>
