@@ -30,7 +30,7 @@ trait LibPayTestSupport {
   )
 
   val someCreditCard = CreditCard(
-    number = "444433332222111",
+    number = "4580458045804580",
     expiration = YearMonth(2020, 12),
     additionalFields = Some(someCreditCardOptionalFields)
   )
