@@ -23,3 +23,4 @@ A simple Java/Scala payment gateway SPI
 | [Tranzila](http://www.tranzila.co.il/)             | [libpay-tranzila](https://github.com/wix/libpay-tranzila)                       |
 | [Worldpay (SMB)](http://www.worldpay.com/)         | [libpay-worldpay-smb](https://github.com/wix/libpay-worldpay-smb)               |
 | [Worldpay (Enterprise)](http://www.worldpay.com/)  | [libpay-worldpay-enterprise](https://github.com/wix/libpay-worldpay-enterprise) |
+| [ZooZ](http://www.zooz.com/)                       | [libpay-zooz](https://github.com/wix/libpay-zooz)                               |
