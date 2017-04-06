@@ -18,6 +18,7 @@ A simple Java/Scala payment gateway SPI
 | [Pay Box](http://www.paybox.com/)                  | [libpay-paybox](https://github.com/wix/libpay-paybox)                           |
 | [Payment Express](https://www.paymentexpress.com/) | [libpay-paymentexpress](https://github.com/wix/libpay-paymentexpress)           |
 | [PayPal](https://www.paypal.com/)                  | [libpay-paypal](https://github.com/wix/libpay-paypal)                           |
+| [PayU (Citrus Pay)](http://www.citruspay.com/)     | [libpay-payu-citrus](https://github.com/wix/libpay-payu-citrus)                 |
 | [Pelecard](http://www.pelecard.com/)               | [libpay-pelecard](https://github.com/wix/libpay-pelecard)                       |
 | [Stripe](https://stripe.com/)                      | [libpay-stripe](https://github.com/wix/libpay-stripe)                           |
 | [Tranzila](http://www.tranzila.co.il/)             | [libpay-tranzila](https://github.com/wix/libpay-tranzila)                       |
