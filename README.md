@@ -23,6 +23,7 @@ A simple Java/Scala payment gateway SPI
 | [Pelecard](http://www.pelecard.com/)               | [libpay-pelecard](https://github.com/wix/libpay-pelecard)                       |
 | [Stripe](https://stripe.com/)                      | [libpay-stripe](https://github.com/wix/libpay-stripe)                           |
 | [Tranzila](http://www.tranzila.co.il/)             | [libpay-tranzila](https://github.com/wix/libpay-tranzila)                       |
+| [Wirecard](https://www.wirecard.com/)              | [libpay-wirecard](https://github.com/wix/libpay-wirecard)                       |
 | [Worldpay (SMB)](http://www.worldpay.com/)         | [libpay-worldpay-smb](https://github.com/wix/libpay-worldpay-smb)               |
 | [Worldpay (Enterprise)](http://www.worldpay.com/)  | [libpay-worldpay-enterprise](https://github.com/wix/libpay-worldpay-enterprise) |
 | [ZooZ](http://www.zooz.com/)                       | [libpay-zooz](https://github.com/wix/libpay-zooz)                               |
