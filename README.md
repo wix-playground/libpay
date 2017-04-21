@@ -8,6 +8,7 @@ A simple Java/Scala payment gateway SPI
 | [Authorize.Net](http://www.authorize.net/)         | [libpay-authorizenet](https://github.com/wix/libpay-authorizenet)               |
 | [Braintree](https://www.braintreepayments.com/)    | [libpay-braintree](https://github.com/wix/libpay-braintree)                     |
 | [CreditGuard](http://www.creditguard.co.il/)       | [libpay-creditguard](https://github.com/wix/libpay-creditguard)                 |
+| [dLocal](https://dlocal.com/)                      | [libpay-dlocal](https://github.com/wix/libpay-dlocal)                           |
 | [Dengi Online](https://dengionline.com/)           | [libpay-dengionline](https://github.com/wix/libpay-dengionline)                 |
 | [eWAY](https://eway.io/)                           | [libpay-eway](https://github.com/wix/libpay-eway)                               |
 | [Fat Zebra](https://www.fatzebra.com.au/)          | [libpay-fatzebra](https://github.com/wix/libpay-fatzebra)                       |
