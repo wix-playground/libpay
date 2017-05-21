@@ -13,13 +13,10 @@ case class Customer(name: Option[Name] = None,
                     email: Option[String] = None,
                     ipAddress: Option[String] = None,
                     fax: Option[String] = None,
-                    company : Option[String] = None) {
-  def firstName : Option[String] = {
-    name map (_.first)
-  }
-  def lastName : Option[String] = {
-    name map (_.last)
-  }
+                    company: Option[String] = None) {
+  def firstName: Option[String] = name.map(_.first)
+
+  def lastName: Option[String] = name.map(_.last)
 }
 
 case class Name(first: String, last: String)

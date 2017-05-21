@@ -6,6 +6,8 @@
 \*                |/                                                 */
 package com.wix.pay.model
 
+import java.util.Locale
+
 import com.wix.pay.creditcard.AddressDetailed
 
 /**
@@ -24,13 +26,13 @@ case class Deal(id: String,
                 shippingAddress : Option[ShippingAddress] = None,
                 orderItems: Seq[OrderItem] = Seq.empty[OrderItem],
                 includedCharges: Option[IncludedCharges] = None
-                 ) extends Serializable
+                 )
 
 case class OrderItem(id: Option[String] = None,
                      name: Option[String] = None,
                      quantity: Option[Double] = None,
                      pricePerItem: Option[Double] = None,
-                     description: Option[String] = None) extends Serializable
+                     description: Option[String] = None)
 
 
 case class IncludedCharges(
@@ -47,10 +49,14 @@ case class ShippingAddress (
                              email      : Option[String] = None,
                              address: Option[AddressDetailed] = None
 
-                             ) extends Serializable {
-  val street = address.flatMap(_.street)
-  val city   = address.flatMap(_.city)
-  val state  = address.flatMap(_.state)
-  val postalCode  = address.flatMap(_.postalCode)
-  val countryCode =  address.flatMap(_.countryCode)
+                             ) {
+  def street: Option[String] = address.flatMap(_.street)
+
+  def city: Option[String] = address.flatMap(_.city)
+
+  def state: Option[String] = address.flatMap(_.state)
+
+  def postalCode: Option[String] = address.flatMap(_.postalCode)
+
+  def countryCode: Option[Locale] = address.flatMap(_.countryCode)
 }
