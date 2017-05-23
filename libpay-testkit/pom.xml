@@ -20,7 +20,7 @@
     <parent>
         <groupId>com.wix.pay</groupId>
         <artifactId>libpay-parent</artifactId>
-        <version>1.4.0-SNAPSHOT</version>
+        <version>1.4.0</version>
 		<relativePath>../libpay-parent</relativePath>
     </parent>
 
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.wix.pay</groupId>
             <artifactId>libpay-api</artifactId>
-            <version>1.4.0-SNAPSHOT</version>
+            <version>1.4.0</version>
         </dependency>
     </dependencies>
 </project>
