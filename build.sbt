@@ -12,10 +12,8 @@ scalacOptions ++= Seq(
   "-Xlint:-missing-interpolator"
 )
 
-resolvers ++= Seq(
-  Resolver.sonatypeRepo("releases"),
-  Resolver.sonatypeRepo("snapshots")
-)
+resolvers in ThisBuild += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+resolvers in ThisBuild += "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true
@@ -26,7 +24,7 @@ lazy val publishSettings = Seq(
     if (isSnapshot.value)
       Some("snapshots" at nexus + "content/repositories/snapshots")
     else
-      Some("releases" at nexus + "service/local/staging/deploy/maven2")
+      Some("releases" at nexus + "content/repositories/releases")
   }
   , pomExtra :=
     <url>https://github.com/wix/libpay</url>
@@ -51,13 +49,14 @@ lazy val api = Project(
   )
 )
 
+lazy val testkit = Project(
+  id = "libpay-testkit"
+  , base = file("libpay-testkit")
+).dependsOn(api)
+
 lazy val root = Project(
   id = "root"
   , base = file(".")
 ).aggregate(api, testkit)
 
 
-lazy val testkit = Project(
-  id = "libpay-testkit",
-  base = file("libpay-testkit")
-).dependsOn(api)
