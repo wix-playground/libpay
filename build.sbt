@@ -12,6 +12,11 @@ scalacOptions ++= Seq(
   "-Xlint:-missing-interpolator"
 )
 
+resolvers ++= Seq(
+  Resolver.sonatypeRepo("releases"),
+  Resolver.sonatypeRepo("snapshots")
+)
+
 lazy val publishSettings = Seq(
   publishMavenStyle := true
   , publishArtifact in Test := false
