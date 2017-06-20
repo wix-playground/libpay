@@ -1,0 +1,20 @@
+language: scala
+
+scala:
+  - 2.12.2
+  - 2.11.11
+
+script:
+#  - sbt clean test
+  - sbt ++$TRAVIS_SCALA_VERSION clean test
+
+jdk:
+  - oraclejdk8
+
+env:
+  global:
+    _ secure: "BH3MBAoypM4THZt9q8bWA29ndKvzU3V6MCCIe4nLV8mEeUg96PYhrRVISYwSLuN8DFCkgFlkVTx4YMIfC5h494uin+0JpccKH0sxVCR79k2ef5o6h6cTPDgkFhi1vdpqaq4yRxvYpSwsbkc+toQKpLRmA4I/CnzQSGVdYDVQMaCbSSC9yiGI0VI8MM6XvHO+EHEx6zP9iTri/nZTWWeMUfbfloANytUjm8IGzQT8Mtx+PyBNY28zZcji3YSIAX5Z6anotc8qCzCgzpWHjBlSnb82VHut1XhPSUojFFSBXdDj8Bx8sr3ZjwkOuKM5ePJY8FMP6G9Okld9HT68Em1PbpkH6h4loeZ+jpiAzaAXEByvw6L1EgmnE40vZr5l4RbeqnebiPq3Jptg24vAMUos1XQ/hPqLjNQQxcLELigQ5WO8R09Rzuz4i4dovclGppKuw+LK6sSmjnCxAG/V9XyHa2aOD/eIx0vqcQmFD1nlIYw7iS2w3W2lqtzVWhizsHiws9IILo6J88Uv964YpNfrmskcIJhkxEJVzn8LjIB+HnlSGSLb7kkuoYp9nn7SoOfqQjWB5JAyBY7WmxgfeiZvlcX2IQxYbwOZJSJ2FLlJLr1nM1zxmxdWTJaDFS48DGbK2snWXGry4Xde9C/hlSOr6Xz3S2fxQYzAQhGGIW3hmrg="
+    _ secure: "Zr9wghT1QVMiq71RXbRNJMOfgoiHoeuZKZWWoEQoIzsmk05c3pQHLY/FdZ637iWjBIa4niwqQeFETHQGanyXsdN4noM0aerrrDoH4CuAdGiGJvmjb4BzZnaNkDi98IF7SB5wlqBHXKgdLPJfQCX6c5YcWEFOZc0lCGH/llNv7aBWWk/fGQQSQJPqcH+Gf/OcT2eMqe9T/gT+A17ouzh2vuttrnvfuop/09IrabxMgElNa3Oa18wHYARbjVK5b7BBw3U0TUq29Z30lp7Sr/SWMLJioGlUpqGxo93gLUdyfGxv7eP+zSK/ugM7u9wA6ssxIBmZiVUHYopA47fJ5EvPqUU+pY3nlt7h8N4EsTinrVUkUXwcUOR6V+l0SWgFBO/L0s7nr1uPNOQA13YFs9rjV+UnnJURuIk4xms76gMr4VMQRo8Bu5QD8hd1Wk5cLJl7S8M4N2mEws/dg2E0wLYXWOKlBM55Juh9g2I8RKDwirNrEi5K+LcxINkBtMqH3Bqk2jWoSF54hf0oYH8pMUf3OQtnBdaXED+5E81baQuOb8y8+SsPtgmvf83ggrgFCXMwJKG8L2e9NuIHKmPZ/o8G9ZujL61Ma9i0IvtHU1E2WGviUmJoCXD8MxKTbhQ9bsNeWgonEwPEMlBvTBNMA2hOiOnF6kcZg1K0d2pwJkMwXq0="
+
+after_success:
+  - "[[ $TRAVIS_BRANCH == \"master\" ]] && { sbt ++$TRAVIS_SCALA_VERSION publish; };"
