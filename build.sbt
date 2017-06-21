@@ -54,6 +54,7 @@ lazy val api = Project(
 lazy val testkit = Project(
   id = "libpay-testkit"
   , base = file("libpay-testkit")
+  , settings = publishSettings
 ).dependsOn(api)
 
 lazy val root = Project(
