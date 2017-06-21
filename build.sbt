@@ -42,6 +42,8 @@ lazy val publishSettings = Seq(
       </developers>
 )
 
+lazy val noPublish = Seq( publish := {}, publishLocal := {}, publishArtifact := false )
+
 lazy val api = Project(
   id = "libpay-api"
   , base = file("libpay-api")
@@ -60,6 +62,7 @@ lazy val testkit = Project(
 lazy val root = Project(
   id = "root"
   , base = file(".")
+  ,settings = noPublish
 ).aggregate(api, testkit)
 
 
