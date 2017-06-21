@@ -28,7 +28,7 @@ lazy val publishSettings = Seq(
     else
       Some("releases" at nexus + "content/repositories/releases")
   }
-  , pomExtra :=
+  , pomExtra in ThisBuild :=
     <url>https://github.com/wix/libpay</url>
       <scm>
         <url>git@github.com:wix/libpay.git</url>
