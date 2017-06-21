@@ -28,6 +28,9 @@ lazy val publishSettings = Seq(
     else
       Some("releases" at nexus + "content/repositories/releases")
   }
+  ,name := "libpay-all"
+  ,version := "1.6.0-SNAPSHOT"
+  ,organization := "com.wix.pay"
   , pomExtra in ThisBuild :=
     <url>https://github.com/wix/libpay</url>
       <scm>
