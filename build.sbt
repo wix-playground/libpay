@@ -1,11 +1,11 @@
 name := "libpay-all"
-version := "1.6.0-SNAPSHOT"
-organization := "com.wix.pay"
-licenses := Seq("Apache License, ASL Version 2.0" → url("http://www.apache.org/licenses/LICENSE-2.0"))
+version in ThisBuild := "1.6.0-SNAPSHOT"
+organization in ThisBuild := "com.wix.pay"
+licenses in ThisBuild := Seq("Apache License, ASL Version 2.0" → url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-scalaVersion := "2.11.11"
-crossScalaVersions := Seq("2.11.11", "2.12.2")
-scalacOptions ++= Seq(
+scalaVersion in ThisBuild := "2.11.11"
+crossScalaVersions in ThisBuild := Seq("2.11.11", "2.12.2")
+scalacOptions in ThisBuild ++= Seq(
   "-deprecation",
   "-feature",
   "-Xlint",
@@ -17,53 +17,53 @@ resolvers in ThisBuild ++= Seq(
   Resolver.sonatypeRepo("snapshots")
 )
 
-lazy val publishSettings = Seq(
-  publishMavenStyle := true
-  , publishArtifact in Test := false
-  , pomIncludeRepository := (_ ⇒ false)
-  , publishTo := {
-    val nexus = "https://oss.sonatype.org/"
-    if (isSnapshot.value)
-      Some("snapshots" at nexus + "content/repositories/snapshots")
-    else
-      Some("releases" at nexus + "content/repositories/releases")
-  }
-  , pomExtra in ThisBuild :=
-    <url>https://github.com/wix/libpay</url>
-      <scm>
-        <url>git@github.com:wix/libpay.git</url>
-        <connection>scm:git:git@github.com:wix/libpay.git</connection>
-      </scm>
-      <developers>
-        <developer>
-          <id>ohadraz</id>
-          <name>Ohad Raz</name>
-        </developer>
-      </developers>
-)
+publishMavenStyle in ThisBuild := true
+publishArtifact in Test := false
+pomIncludeRepository in ThisBuild := (_ ⇒ false)
+publishTo in ThisBuild := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases" at nexus + "content/repositories/releases")
+}
 
-lazy val noPublish = Seq( publish := {}, publishLocal := {}, publishArtifact := false )
+pomExtra in ThisBuild :=
+  <url>https://github.com/wix/libpay</url>
+    <scm>
+      <url>git@github.com:wix/libpay.git</url>
+      <connection>scm:git:git@github.com:wix/libpay.git</connection>
+    </scm>
+    <developers>
+      <developer>
+        <id>ohadraz</id>
+        <name>Ohad Raz</name>
+      </developer>
+    </developers>
 
 lazy val api = Project(
   id = "libpay-api"
   , base = file("libpay-api")
-  , settings = publishSettings ++ Seq(name := "libpay-api", version := "1.6.0-SNAPSHOT", organization := "com.wix.pay")
+  , settings = Seq(name := "libpay-api")
     ++ Seq(libraryDependencies ++= Seq(
     "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-    "com.wix.pay" %% "credit-card" % "1.8.0-SNAPSHOT")
+    "com.wix.pay" %% "credit-card" % "1.8.0-SNAPSHOT"
+    )
   )
 )
 
 lazy val testkit = Project(
   id = "libpay-testkit"
   , base = file("libpay-testkit")
-  , settings = publishSettings ++ Seq(name := "libpay-testkit", version := "1.6.0-SNAPSHOT", organization := "com.wix.pay")
+  , settings = Seq(name := "libpay-testkit")
 ).dependsOn(api)
+
+lazy val noPublish = Seq(publish := {}, publishLocal := {}, publishArtifact := false)
 
 lazy val root = Project(
   id = "root"
   , base = file(".")
-  ,settings = noPublish
+  , settings = noPublish
 ).aggregate(api, testkit)
 
 
