@@ -12,8 +12,10 @@ scalacOptions ++= Seq(
   "-Xlint:-missing-interpolator"
 )
 
-resolvers in ThisBuild += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-resolvers in ThisBuild += "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
+resolvers in ThisBuild ++= Seq(
+  Resolver.sonatypeRepo("releases"),
+  Resolver.sonatypeRepo("snapshots")
+)
 
 lazy val publishSettings = Seq(
   publishMavenStyle := true
