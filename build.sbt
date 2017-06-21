@@ -44,12 +44,8 @@ pomExtra in ThisBuild :=
 lazy val api = Project(
   id = "libpay-api"
   , base = file("libpay-api")
-  , settings = Seq(name := "libpay-api")
-    ++ Seq(libraryDependencies ++= Seq(
-    "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-    "com.wix.pay" %% "credit-card" % "1.8.0-SNAPSHOT"
-    )
-  )
+  , settings = Seq(name := "libpay-api") ++ 
+      Seq(libraryDependencies += "com.wix.pay" %% "credit-card" % "1.8.0-SNAPSHOT" )
 )
 
 lazy val testkit = Project(
