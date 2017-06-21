@@ -28,9 +28,6 @@ lazy val publishSettings = Seq(
     else
       Some("releases" at nexus + "content/repositories/releases")
   }
-  ,name := "libpay-all"
-  ,version := "1.6.0-SNAPSHOT"
-  ,organization := "com.wix.pay"
   , pomExtra in ThisBuild :=
     <url>https://github.com/wix/libpay</url>
       <scm>
@@ -50,7 +47,8 @@ lazy val noPublish = Seq( publish := {}, publishLocal := {}, publishArtifact := 
 lazy val api = Project(
   id = "libpay-api"
   , base = file("libpay-api")
-  , settings = publishSettings ++ Seq(libraryDependencies ++= Seq(
+  , settings = publishSettings ++ Seq(name := "libpay-api", version := "1.6.0-SNAPSHOT", organization := "com.wix.pay")
+    ++ Seq(libraryDependencies ++= Seq(
     "org.scala-lang" % "scala-reflect" % scalaVersion.value,
     "com.wix.pay" %% "credit-card" % "1.8.0-SNAPSHOT")
   )
@@ -59,7 +57,7 @@ lazy val api = Project(
 lazy val testkit = Project(
   id = "libpay-testkit"
   , base = file("libpay-testkit")
-  , settings = publishSettings
+  , settings = publishSettings ++ Seq(name := "libpay-testkit", version := "1.6.0-SNAPSHOT", organization := "com.wix.pay")
 ).dependsOn(api)
 
 lazy val root = Project(
