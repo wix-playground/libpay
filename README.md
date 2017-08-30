@@ -11,6 +11,7 @@ A simple Java/Scala payment gateway SPI
 | [dLocal](https://dlocal.com/)                      | [libpay-dlocal](https://github.com/wix/libpay-dlocal)                           |
 | [Dengi Online](https://dengionline.com/)           | [libpay-dengionline](https://github.com/wix/libpay-dengionline)                 |
 | [eWAY](https://eway.io/)                           | [libpay-eway](https://github.com/wix/libpay-eway)                               |
+| [eWAY (v3 API)](https://eway.io/)                  | [libpay-eway-v3](https://github.com/wix/libpay-eway-v3)                         |
 | [Fat Zebra](https://www.fatzebra.com.au/)          | [libpay-fatzebra](https://github.com/wix/libpay-fatzebra)                       |
 | [Leumi Card](https://www.leumi-card.co.il/)        | [libpay-leumicard](https://github.com/wix/libpay-leumicard)                     |
 | [MercadoPago](https://www.mercadopago.com/)        | [libpay-mercadopago](https://github.com/wix/libpay-mercadopago)                 |
