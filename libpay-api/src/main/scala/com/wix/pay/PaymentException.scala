@@ -20,9 +20,9 @@ class PaymentException(message: String, cause: Throwable, gatewayInternalCode: O
   * object.
   */
 object PaymentException {
-  def apply(gatewayInternalCode: Option[String] = None): PaymentException = new PaymentException(null, null, gatewayInternalCode)
-  def apply(message: String, gatewayInternalCode: Option[String] = None): PaymentException = new PaymentException(message, null, gatewayInternalCode)
-  def apply(cause: Throwable, gatewayInternalCode: Option[String] = None): PaymentException = new PaymentException(Option(cause).map(_.toString).orNull, cause, gatewayInternalCode)
+  def apply(): PaymentException = new PaymentException(null, null, None)
+  def apply(message: String): PaymentException = new PaymentException(message, null, None)
+  def apply(cause: Throwable): PaymentException = new PaymentException(Option(cause).map(_.toString).orNull, cause, None)
 }
 
 
@@ -40,9 +40,9 @@ case class PaymentRejectedException(message: String, cause: Throwable, gatewayIn
   * exception object.
   */
 object PaymentRejectedException {
-  def apply(gatewayInternalCode: Option[String] = None): PaymentRejectedException = this(null, null, gatewayInternalCode)
-  def apply(message: String, gatewayInternalCode: Option[String] = None): PaymentRejectedException = this(message, null, gatewayInternalCode)
-  def apply(cause: Throwable, gatewayInternalCode: Option[String] = None): PaymentRejectedException = this(Option(cause).map(_.toString).orNull, cause, gatewayInternalCode)
+  def apply(): PaymentRejectedException = this(null, null, None)
+  def apply(message: String): PaymentRejectedException = this(message, null, None)
+  def apply(cause: Throwable): PaymentRejectedException = this(Option(cause).map(_.toString).orNull, cause, None)
 }
 
 
@@ -61,7 +61,7 @@ case class PaymentErrorException(message: String, cause: Throwable, gatewayInter
   * object.
   */
 object PaymentErrorException {
-  def apply(gatewayInternalCode: Option[String] = None): PaymentErrorException = this(null, null, gatewayInternalCode)
-  def apply(message: String, gatewayInternalCode: Option[String] = None): PaymentErrorException = this(message, null, gatewayInternalCode)
-  def apply(cause: Throwable, gatewayInternalCode: Option[String] = None): PaymentErrorException = this(Option(cause).map(_.toString).orNull, cause, gatewayInternalCode)
+  def apply(): PaymentErrorException = this(null, null, None)
+  def apply(message: String): PaymentErrorException = this(message, null, None)
+  def apply(cause: Throwable): PaymentErrorException = this(Option(cause).map(_.toString).orNull, cause, None)
 }
