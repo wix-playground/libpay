@@ -65,3 +65,23 @@ object PaymentErrorException {
   def apply(message: String): PaymentErrorException = this(message, null, None)
   def apply(cause: Throwable): PaymentErrorException = this(Option(cause).map(_.toString).orNull, cause, None)
 }
+
+
+
+/**
+  * An exception raised upon encountering an error with user account (in the case when credentials were correct, but account is incorrectly set up).
+  *
+  * @param gatewayInternalCode   an optional, opaque, gateway-specific error code for debugging, logging, and analytics.
+  *                              Do not rely on this for business logic: values and format are treated as implementation
+  *                              detail and may change without notice.
+  */
+case class AccountException(message: String, cause: Throwable, gatewayInternalCode: Option[String] = None) extends PaymentException(message, cause, gatewayInternalCode)
+
+/** The Companion Object of the [[AccountException]] class, which introduces means for instantiating an
+  * exception object.
+  */
+object AccountException {
+  def apply(): AccountException = this(null, null, None)
+  def apply(message: String): AccountException = this(message, null, None)
+  def apply(cause: Throwable): AccountException = this(Option(cause).map(_.toString).orNull, cause, None)
+}
