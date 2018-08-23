@@ -41,12 +41,16 @@ trait LibPayTestSupport {
   )
 
   val someCustomer = Customer(
+    id = Some("some-customer-id"),
     phone = Some("123456789"),
     email = Some("some@email.com"),
     name = Some(someCustomerName),
     ipAddress = Some("111.222.333.444"),
     fax = Some("987654321"),
-    company = Some("Some Customer Company")
+    company = Some("Some Customer Company"),
+    userAgent = Some("Some User Agent"),
+    referrer = Some("https://some.business.com/pay"),
+    deviceId = Some("some-device-id")
   )
 
   private val someShippingAddressDetailed = AddressDetailed(
@@ -209,8 +213,24 @@ trait LibPayTestSupport {
     def withoutCompany: Customer = withCompany(None)
     def withCompany(company: String): Customer = withCompany(Some(company))
     def withCompany(company: Option[String]): Customer = o.copy(company = company)
+
+    def withoutId: Customer = withId(None)
+    def withId(id: String): Customer = withId(Some(id))
+    def withId(id: Option[String]): Customer = o.copy(id = id)
+
+    def withoutUserAgent: Customer = withUserAgent(None)
+    def withUserAgent(userAgent: String): Customer = withUserAgent(Some(userAgent))
+    def withUserAgent(userAgent: Option[String]): Customer = o.copy(userAgent = userAgent)
+
+    def withoutReferrer: Customer = withReferrer(None)
+    def withReferrer(referrer: String): Customer = withReferrer(Some(referrer))
+    def withReferrer(referrer: Option[String]): Customer = o.copy(referrer = referrer)
+
+    def withoutDeviceId: Customer = withDeviceId(None)
+    def withDeviceId(deviceId: String): Customer = withDeviceId(Some(deviceId))
+    def withDeviceId(deviceId: Option[String]): Customer = o.copy(deviceId = deviceId)
   }
-  
+
   implicit class NameTestExtensions(o: Name) {
     def withFirst(first: String): Name = o.copy(first = first)
     def withLast(last: String): Name = o.copy(last = last)
